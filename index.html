@@ -23,17 +23,9 @@
         </style>
         <!-- User-generated js -->
         <script>
-$(function() {
-    $("input:radio").click(function(){
-            $('.toHide').hide();
-            $("#blk-"+$(this).val()).show();
-    });
-});
         </script>
     </head>
     <body>
-    
-<form name="form1" action="multipageresult.php" method="POST">
         <!-- Home -->
         <div data-role="page" data-theme="p" id="step1">
             <div data-theme="p" data-role="header">
@@ -53,7 +45,6 @@ $(function() {
                 	Reporting the outage is fast and easy. Please choose one of the following:
                 </p>
                 </div>
-            </div>
             <div data-role="collapsible">
                 <h3>
                 Report Power Problem
@@ -72,22 +63,24 @@ $(function() {
                 </ul>
             </div>
             <ul data-role="listview" data-inset="true">
-            <li data-theme="c">
-                <a href="outageMap.html" data-transition="slide">
+            <li data-theme="c" class="menuBtn">
+                <a href="#page1" data-transition="slide" class="menuLink">
                     View Current Outages
                 </a>
             </li>
-            <li data-theme="c">
-                <a href="#page1" data-transition="slide">
+            <li data-theme="c" class="menuBtn">
+                <a href="#page1" data-transition="slide" class="menuLink">
                     Report Down Power Line
                 </a>
             </li>
-            <li data-theme="c">
-                <a href="#page1" data-transition="slide">
+            <li data-theme="c" class="menuBtn">
+                <a href="#page1" data-transition="slide" class="menuLink">
                     Report Gas Leak
                 </a>
             </li>
         </ul>
+        
+            </div>
                 </div>
             </div>
         </div>

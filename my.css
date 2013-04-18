@@ -341,6 +341,28 @@ h2 {
 	font-size:12px !important;
 	text-transform:none !important;
 }
+
+h5{
+	font-size:18px;
+	}
+
+
+.box{
+	width:100%;
+	margin:0 2% 0 2%;
+	border-radius:15px;
+	moz-border-radius:15px;
+	webkit-border-radius:15px;
+	o-border-radius:15px;
+	ms-border-radius:15px;
+	background-color:#444;
+	}
+	
+.box li{
+	margin-top:10px;
+	margin-bottom:10px;
+	}
+	
 .ui-bar-p, .ui-bar-p input, .ui-bar-p select, .ui-bar-p textarea, .ui-bar-p button, .ui-body-p, .ui-body-p input, .ui-body-p select, .ui-body-p textarea, .ui-body-p button {
 	font-family: DIN_Medium, Helvetica, Arial, sans-serif;
 }

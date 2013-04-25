@@ -5,10 +5,12 @@
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no">
         <title>
+        Report Power Outage
         </title>
         <link rel="stylesheet" href="https://s3.amazonaws.com/codiqa-cdn/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-        <link rel="stylesheet" href="../my.css" />
+        <link rel="stylesheet" href="../../resources/my.css" />
         <script src="https://s3.amazonaws.com/codiqa-cdn/jquery-1.7.2.min.js">
         </script>
         <script>
@@ -32,6 +34,45 @@ $(function() {
     		$("#blk-"+$('#toggle1 input[type=radio]:checked').val()).show();
 			$("#blk-"+$('#toggle2 input[type=radio]:checked').val()).show();
 	});
+	
+	var disabled = true;
+$(document).delegate('.ui-page', 'pagebeforeshow', pageCheckEnableContinue)
+$("input:radio").click(checkEnableContinue);
+$('input[type="text"],input[type="tel"],input[type="email"]').keyup(enableContinue);
+$('input[type="text"],input[type="tel"],input[type="email"]').focusout(enableContinue);
+function enableContinue() {
+	var emptyInputs = $(this).parent().parent().parent().find('input[type="text"],input[type="tel"],input[type="email"]').filter(function() { return $(this).val() == ""; });
+	if( disabled = true && emptyInputs != "" ) {
+   		$('.continueButton').removeClass('ui-disabled');
+		disabled = false;
+	}
+	if ( disabled != true && emptyInputs.val() == "" ) {
+		$('.continueButton').addClass('ui-disabled');
+		disabled = true;
+	}
+};
+function checkEnableContinue() {
+	var emptyInputs = $("#blk-"+$(this).val()).find('input[type="text"],input[type="tel"],input[type="email"]').filter(function() { return $(this).val() == ""; });
+	if( disabled = true && emptyInputs != "" ) {
+   		$('.continueButton').removeClass('ui-disabled');
+		disabled = false;
+	}
+	if ( disabled != true && emptyInputs.val() == "" ) {
+		$('.continueButton').addClass('ui-disabled');
+		disabled = true;
+	}
+};
+function pageCheckEnableContinue() {
+	var emptyInputs = $("#blk-"+$('#toggle2 input[type=radio]:checked').val()).find('input[type="text"],input[type="tel"],input[type="email"]').filter(function() { return $(this).val() == ""; });
+	if( disabled = true && emptyInputs != "" ) {
+   		$('.continueButton').removeClass('ui-disabled');
+		disabled = false;
+	}
+	if ( disabled != true && emptyInputs.val() == "" ) {
+		$('.continueButton').addClass('ui-disabled');
+		disabled = true;
+	}
+};
  });
         </script>
     </head>
@@ -42,13 +83,13 @@ $(function() {
         <div data-role="page" data-theme="p" id="step1">
             <div data-theme="p" data-role="header">
             	<div>
-                <a href="#" class="logo"></a>
+                <a href="/pge/index.html" class="logo"></a>
                 </div>
                 <h1>
                     Report "No Power"
                 </h1>
                 <h2>
-                	(1 of 4)
+                	(1 of 3)
                 </h2>
             </div>
             <div data-role="content">
@@ -88,7 +129,7 @@ $(function() {
                     <fieldset data-role="controlgroup">
                         <label for="accountPhone" class="ui-hidden-accessible">Phone Number:</label>
                         </label>
-                        <input name="" id="accountPhone" placeholder="Enter Account Phone Number" value="" type="text" />
+                        <input name="" id="accountPhone" placeholder="Enter Account Phone Number" value="" type="tel" />
                     </fieldset>
                 </div>
             </div>
@@ -97,7 +138,7 @@ $(function() {
                 <a data-role="button" data-theme="g" data-inline="true" data-transition="slide" href="../">
                     Cancel
                 </a>
-                <a data-role="button" data-inline="true" data-transition="slide" href="#step2">
+                <a data-role="button" class="ui-disabled continueButton" data-inline="true" data-transition="slide" href="#step2">
                     Continue
                 </a>
                 </div>
@@ -113,16 +154,16 @@ $(function() {
                     Contact Info
                 </h1>
                 <h2>
-                	(2 of 4)
+                	(2 of 3)
                 </h2>
             </div>
             <div data-role="content">
             	<div id="instructions">
                 <h4>
-                    How can we contact you?
+                    Would you like to receive updates?
                 </h4>
                 <p>
-                	If we have any questions, what phone number can we reach you at?
+                	If you would like to receive restoration alerts and updates on the status of your outage in an automated message:
                 </p>
                 </div>
                 <div data-role="fieldcontain" id="toggle2">
@@ -149,21 +190,21 @@ $(function() {
                     <fieldset data-role="controlgroup">
                         <label for="phone" class="ui-hidden-accessible">Phone:</label>
                         </label>
-                        <input name="" id="phone" placeholder="Enter Phone Number" value="" type="text" />
+                        <input name="" id="phone" placeholder="Enter Phone Number" value="" type="tel" />
                     </fieldset>
                 </div>
                 <div data-role="fieldcontain" id="blk-4" class="toHide" style="display:none">
                     <fieldset data-role="controlgroup">
                         <label for="phone" class="ui-hidden-accessible">Phone:</label>
                         </label>
-                        <input name="" id="phone" placeholder="Enter Phone Number" value="" type="text" />
+                        <input name="" id="phone" placeholder="Enter Phone Number" value="" type="tel" />
                     </fieldset>
                 </div>
                 <div data-role="fieldcontain" id="blk-5" class="toHide" style="display:none">
                     <fieldset data-role="controlgroup">
                         <label for="email" class="ui-hidden-accessible">Email:</label>
                         </label>
-                        <input name="" id="email" placeholder="Enter Email Address" value="" type="text" />
+                        <input name="" id="email" placeholder="Enter Email Address" value="" type="email" />
                     </fieldset>
                 </div>
                 <div data-role="fieldcontain" id="blk-6" class="toHide" style="display:none">
@@ -174,7 +215,7 @@ $(function() {
                 <a data-role="button" data-theme="g" data-inline="true" data-transition="slide" data-direction="reverse" href="../">
                     Cancel
                 </a>
-                <a data-role="button" data-inline="true" data-transition="slide" href="#step3">
+                <a data-role="button" class="ui-disabled continueButton" data-inline="true" data-transition="slide" href="#step3">
                     Continue
                 </a>
                 </div>
@@ -189,27 +230,28 @@ $(function() {
                     Verify Information
                 </h1>
                 <h2>
-                	(3 of 4)
+                	(3 of 3)
                 </h2>
             </div>
             <div data-role="content">
             	<div id="instructions">
                 <h4>
-                    Please verify the following:
+                    Please verify the following.
                 </h4>
                 <p>
                 	I am reporting:
                 </p>
                 </div>
-            	<div id="summary">
-		    <h5>No Power at:</h5>
-		    <div class="box">
+		    	<div id="summary">
 		        <ul>
+                	<li><h5>No Power at:</h5></li>
 		            <li><p>1201 Mission St.</p></li>
-		            <li><h5>Contact:</h5></li>
-		            <li><p>(415) 123-1234 (Voice)</p></li>
+                    <li><p>San Francisco, CA 94103</p></li>
+		            <li><h5>Restoration alerts and updates sent to:</h5></li>
+		            <li><p>(415)123-1234</p></li>
+                    <li><p>via text</p></li>
 		        </ul>
-		    </div>
+            	</div>
             </div>
                 <div data-role="footer" data-theme="f">
                 <div id="stretch">
@@ -230,9 +272,6 @@ $(function() {
                 <h1>
                     Confirmation
                 </h1>
-                <h2>
-                	(4 of 4)
-                </h2>
             </div>
             <div data-role="content">
             	<div id="instructions">
@@ -243,33 +282,28 @@ $(function() {
                 	Confirmation #: 13031234
                 </p>
                 </div>
-            	<div id="summary">
-                <h5>
-                No Power at:
-                </h5>
-                <p>
-                1201 Mission St.
-                </p>
-                <h5>
-                contact:
-                </h5>
-                <p>
-                (415)123-1234 (Voice)
-                </p>
-                </div>
+		    	<div id="summary">
+		        <ul>
+                	<li><h5>No Power at:</h5></li>
+		            <li><p>1201 Mission St.</p></li>
+                    <li><p>San Francisco, CA 94103</p></li>
+		            <li><h5>Restoration alerts and updates sent to:</h5></li>
+		            <li><p>(415)123-1234</p></li>
+                    <li><p>via text</p></li>
+		        </ul>
+            	</div>
             </div>
                 <div data-role="footer" data-theme="f">
                 <div id="stretch">
                 <a data-role="button" data-theme="g" data-inline="true" data-transition="slide" data-direction="reverse" href="../">
                     Home
                 </a>
-                <a data-role="button" data-inline="true" data-transition="slide" href="#map">
+                <a data-role="button" data-ajax="false" data-inline="true" data-transition="slide" href="../map">
                     Outage Map
                 </a>
                 </div>
                 </div>
             </div>
-        </div>
 </form>
 <script>
 $(function(){

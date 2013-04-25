@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <title>
+        Map View
+        </title>
+        <link rel="stylesheet" href="https://s3.amazonaws.com/codiqa-cdn/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+        <link rel="stylesheet" href="my.css" />
+        <link rel="stylesheet" href="../../resources/my.css" />
+        <script src="https://s3.amazonaws.com/codiqa-cdn/jquery-1.7.2.min.js">
+        </script>
+        <script src="https://s3.amazonaws.com/codiqa-cdn/mobile/1.2.0/jquery.mobile-1.2.0.min.js">
+        </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCB9uVvzNITkdzwvkWzGb_G6Abx5nPtclY&sensor=false"></script>
+    
+<script>
+function initialize() {
+  var p1 = new google.maps.LatLng(37.740952, -122.400311);
+  var p2 = new google.maps.LatLng(37.796862, -122.454863); 
+  var p3 = new google.maps.LatLng(37.772751, -122.470682);
+  var p4 = new google.maps.LatLng(37.720952, -122.410314);
+  var p5 = new google.maps.LatLng(37.756862, -122.434868);
+  var mapOptions = {
+    zoom: 10,
+    center: new google.maps.LatLng(37.770972,-122.42941),
+    disableDefaultUI: true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  
+  var image = 'images/PGE_pin_sha.png';
+
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading" style="font-size:14px;">94563 Orinda</h1>'+
+      '<div id="bodyContent" style="font-size:12px;">'+
+      'Outage Alert Note: 551944<br /> ' +
+      'Restoration ETA: April 18, 11:20 am<br /> '+
+      'Last Updated: April 18, 8:30 am<br /> '+
+      'Start Time: April 18, 6:45 am<br /> '+
+      'Customers Impacted: 60<br /> '+
+      'Cause: Equipment Problems<br /> '+
+      'Crew Status: We are in the process of<br />completing repairs.<br /> '+
+      '</div>'+
+      '</div>';
+
+//--------------------------------------------------------
+  var iw1 = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+  var m1 = new google.maps.Marker({
+      position: p1,
+      icon: image,
+	  map: map
+  });
+  google.maps.event.addListener(m1, 'click', function() {
+    iw1.open(map,m1);
+  });
+
+//--------------------------------------------------------
+  var iw2 = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+  var m2 = new google.maps.Marker({
+      position: p2,
+      icon: image,
+	  map: map
+  });
+  google.maps.event.addListener(m2, 'click', function() {
+    iw2.open(map,m2);
+  }); 
+ 
+//--------------------------------------------------------
+  var iw3 = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+  var m3 = new google.maps.Marker({
+      position: p3,
+      icon: image,
+	  map: map
+  });
+  google.maps.event.addListener(m3, 'click', function() {
+    iw3.open(map,m3);
+  });
+  
+//--------------------------------------------------------
+  var iw4 = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+  var m4 = new google.maps.Marker({
+      position: p4,
+      icon: image,
+	  map: map
+  });
+  google.maps.event.addListener(m4, 'click', function() {
+    iw4.open(map,m4);
+  });
+
+//--------------------------------------------------------
+  var iw5 = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+  var m5 = new google.maps.Marker({
+      position: p5,
+      icon: image,
+	  map: map
+  });
+  google.maps.event.addListener(m5, 'click', function() {
+    iw5.open(map,m5);
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+
+<style type="text/css">
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+#map-canvas{
+  height: 300px;
+  margin:1px 0 0 0;
+  padding:0 0 44px 0;
+}
+
+#panel {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  margin-left: -180px;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+}
+
+.inputSearch{
+	margin:1px 0 0 0;
+}
+.inputSearch input{
+	width:318px; 
+	height:27px; 
+	font-size:14px; 
+	border:1px solid #999;
+}
+.listView{
+	margin:1px 0 0 0;
+}
+.listView button{
+	width:94px; 
+	height:34px; 
+	font-size:14px; 
+}
+.listView span{
+	font-size:12px;
+	float:right;
+	margin:10px 5px 0 0;
+}
+	  
+</style>
+  </head>
+  <body>
+    <div data-role="page" id="mapPage">
+            <div data-theme="p" data-role="header">
+            	<div>
+                <a href="/pge/" class="logo"></a>
+                </div>
+                <h1>
+                    Current Outages
+                </h1>
+            </div>
+    
+    <div class="inputSearch">
+      <input type="text" placeholder=" input zipcode or city" />
+    </div>
+    
+    <div id="map-canvas"></div>
+    
+                <div data-role="footer" data-theme="f">
+                <div id="stretch">
+                <a data-role="button" data-theme="g" data-ajax="false" data-inline="true" data-transition="flip" href="../listView/">
+                    List View
+                </a>
+                <span style="font-size:12px; float:right; margin:0 15px 0 0;">Updated: April 10, 2013, 18:27</span>
+                </div>
+    </div> 
+  </body>
+</html>

@@ -1,0 +1,42 @@
+/* Put your custom CSS here */
+.listTitle{
+}
+.listTitle h4{
+	font-size:12px;
+}
+.expander {
+	padding:7px 40px 7px 12px;
+}
+.listTitle ul{
+	font-size:12px;
+	width:100%;
+	display:table;
+	table-layout:fixed;
+}
+.listTitle li{
+	display:table-cell;
+}
+ul {
+	width:100%;
+	display:table;
+	table-layout:fixed;
+	margin:0;
+	padding:0;
+}
+li {
+	display:table-cell;
+	margin:0;
+	text-align:left;
+}
+h4 span.spanR{
+	float:right;
+}
+h3 span.innerSP{
+	padding:0 0 0 50px;
+}
+h3 span.innerSPT{
+	padding:0 0 0 60px;
+}
+tabel{
+	font-size:12px;
+}

@@ -4,9 +4,12 @@
 .listTitle h4{
 	font-size:12px;
 }
+<<<<<<< HEAD
 .expander {
 	padding:7px 40px 7px 12px;
 }
+=======
+>>>>>>> Week 13 Restructure + Update
 .listTitle ul{
 	font-size:12px;
 	width:100%;
@@ -28,6 +31,7 @@ li {
 	margin:0;
 	text-align:left;
 }
+<<<<<<< HEAD
 h4 span.spanR{
 	float:right;
 }
@@ -38,5 +42,14 @@ h3 span.innerSPT{
 	padding:0 0 0 60px;
 }
 tabel{
+=======
+.ui-collapsible-set li {
+	line-height:0;
+}
+h4 span.spanR{
+	float:right;
+}
+table{
+>>>>>>> Week 13 Restructure + Update
 	font-size:12px;
 }

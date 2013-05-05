@@ -18,6 +18,7 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCB9uVvzNITkdzwvkWzGb_G6Abx5nPtclY&sensor=false"></script>
     
 <script>
+<<<<<<< HEAD
 function initialize() {
   var p1 = new google.maps.LatLng(37.740952, -122.400311);
   var p2 = new google.maps.LatLng(37.796862, -122.454863); 
@@ -27,6 +28,17 @@ function initialize() {
   var mapOptions = {
     zoom: 10,
     center: new google.maps.LatLng(37.770972,-122.42941),
+=======
+$(function() { document.getElementById("map-canvas").style.height = ""+window.innerHeight-126+"px" });
+function initialize() {
+  var p1 = new google.maps.LatLng(37.880952, -122.180311);
+  var p2 = new google.maps.LatLng(37.916862, -122.504863); 
+  var p3 = new google.maps.LatLng(37.622751, -122.390682);
+  var p4 = new google.maps.LatLng(37.772751, -122.390682);
+  var mapOptions = {
+    zoom: 9,
+    center: new google.maps.LatLng(37.900972,-122.37941),
+>>>>>>> Week 13 Restructure + Update
     disableDefaultUI: true,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
@@ -35,6 +47,7 @@ function initialize() {
   
   var image = 'images/PGE_pin_sha.png';
 
+<<<<<<< HEAD
   var contentString = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
@@ -47,48 +60,132 @@ function initialize() {
       'Customers Impacted: 60<br /> '+
       'Cause: Equipment Problems<br /> '+
       'Crew Status: We are in the process of<br />completing repairs.<br /> '+
+=======
+  var contentString1 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading" style="font-size:14px;">94563 Orinda</h1>'+
+      '<div id="bodyContent" style="font-size:12px; color:#999;">'+
+      '<span style="color:#444;">Outage Alert Note: 551944</span><br /> ' +
+      '<span style="color:#fff; background:#29A629;">Restoration ETA: April 18, 11:20 am</span><br /> '+
+      'Last Updated: April 18, 8:30 am<br /> '+
+      'Start Time: April 18, 6:45 am<br /> '+
+      '<span style="color:#fff; background:#f30;">Customers Impacted: 60</span><br /> '+
+      'Cause: Equipment Problems<br /> '+
+      '<span style="color:#999;">Crew Status: We are in the process of<br />completing repairs.</span><br /> '+
+      '</div>'+
+      '</div>';
+  var contentString2 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading" style="font-size:14px;">94942 Marin</h1>'+
+      '<div id="bodyContent" style="font-size:12px; color:#999;">'+
+      '<span style="color:#444;">Outage Alert Note: 551833</span><br /> ' +
+      '<span style="color:#fff; background:#29A629;">Restoration ETA: April 18, 12:00 pm</span><br /> '+
+      'Last Updated: April 18, 9:00 am<br /> '+
+      'Start Time: April 18, 9:00 am<br /> '+
+      '<span style="color:#fff; background:#f30;">Customers Impacted: 200</span><br /> '+
+      'Cause: Planned Outage<br /> '+
+      '<span style="color:#999;">Crew Status: We are in the process of<br />installing safety equipment.</span><br /> '+
+      '</div>'+
+      '</div>';
+  var contentString3 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading" style="font-size:14px;">94066 San Bruno</h1>'+
+      '<div id="bodyContent" style="font-size:12px; color:#999;">'+
+      '<span style="color:#444;">Outage Alert Note: 551782</span><br /> ' +
+      '<span style="color:#fff; background:#29A629;">Restoration ETA: April 20, 3:00 pm</span><br /> '+
+      'Last Updated: April 18, 7:25 am<br /> '+
+      'Start Time: April 18, 7:10 am<br /> '+
+      '<span style="color:#fff; background:#f30;">Customers Impacted: 60</span><br /> '+
+      'Cause: Transformer Fire<br /> '+
+      '<span style="color:#999;">Crew Status: Standing by while firefighters<br />extinguish the blaze.</span><br /> '+
+      '</div>'+
+      '</div>';
+	  var contentString4 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading" style="font-size:14px;">94102 San Francisco</h1>'+
+      '<div id="bodyContent" style="font-size:12px; color:#999;">'+
+      '<span style="color:#444;">Outage Alert Note: 551782</span><br /> ' +
+      '<span style="color:#fff; background:#29A629;">Restoration ETA: April 20, 3:00 pm</span><br /> '+
+      'Last Updated: April 18, 7:25 am<br /> '+
+      'Start Time: April 18, 7:10 am<br /> '+
+      '<span style="color:#fff; background:#f30;">Customers Impacted: 60</span><br /> '+
+      'Cause: Transformer Fire<br /> '+
+      '<span style="color:#999;">Crew Status: Standing by while firefighters<br />extinguish the blaze.</span><br /> '+
+>>>>>>> Week 13 Restructure + Update
       '</div>'+
       '</div>';
 
 //--------------------------------------------------------
   var iw1 = new google.maps.InfoWindow({
+<<<<<<< HEAD
       content: contentString
   });
 
+=======
+      content: contentString1
+  });
+>>>>>>> Week 13 Restructure + Update
   var m1 = new google.maps.Marker({
       position: p1,
       icon: image,
 	  map: map
   });
   google.maps.event.addListener(m1, 'click', function() {
+<<<<<<< HEAD
+=======
+	iw2.close(map,m2);
+	iw3.close(map,m3);
+	iw4.close(map,m4);
+>>>>>>> Week 13 Restructure + Update
     iw1.open(map,m1);
   });
 
 //--------------------------------------------------------
   var iw2 = new google.maps.InfoWindow({
+<<<<<<< HEAD
       content: contentString
   });
 
+=======
+      content: contentString2
+  });
+>>>>>>> Week 13 Restructure + Update
   var m2 = new google.maps.Marker({
       position: p2,
       icon: image,
 	  map: map
   });
   google.maps.event.addListener(m2, 'click', function() {
+<<<<<<< HEAD
+=======
+	iw1.close(map,m1);
+	iw3.close(map,m3);
+	iw4.close(map,m4);
+>>>>>>> Week 13 Restructure + Update
     iw2.open(map,m2);
   }); 
  
 //--------------------------------------------------------
   var iw3 = new google.maps.InfoWindow({
+<<<<<<< HEAD
       content: contentString
   });
 
+=======
+      content: contentString3
+  });
+>>>>>>> Week 13 Restructure + Update
   var m3 = new google.maps.Marker({
       position: p3,
       icon: image,
 	  map: map
   });
   google.maps.event.addListener(m3, 'click', function() {
+<<<<<<< HEAD
     iw3.open(map,m3);
   });
   
@@ -97,12 +194,24 @@ function initialize() {
       content: contentString
   });
 
+=======
+	iw1.close(map,m1);
+	iw2.close(map,m2);
+	iw4.close(map,m4);
+    iw3.open(map,m3);
+  });
+//--------------------------------------------------------
+  var iw4 = new google.maps.InfoWindow({
+      content: contentString4
+  });
+>>>>>>> Week 13 Restructure + Update
   var m4 = new google.maps.Marker({
       position: p4,
       icon: image,
 	  map: map
   });
   google.maps.event.addListener(m4, 'click', function() {
+<<<<<<< HEAD
     iw4.open(map,m4);
   });
 
@@ -119,6 +228,14 @@ function initialize() {
   google.maps.event.addListener(m5, 'click', function() {
     iw5.open(map,m5);
   });
+=======
+	iw1.close(map,m1);
+	iw2.close(map,m2);
+	iw3.close(map,m3);
+    iw4.open(map,m4);
+  });
+
+>>>>>>> Week 13 Restructure + Update
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -133,11 +250,18 @@ html, body {
   padding: 0;
   font-family:Arial, Helvetica, sans-serif;
 }
+<<<<<<< HEAD
 
 #map-canvas{
   height: 300px;
   margin:1px 0 0 0;
   padding:0 0 44px 0;
+=======
+#map-canvas{
+  height:100%;
+  width:100%;
+  display:block;
+>>>>>>> Week 13 Restructure + Update
 }
 
 #panel {
@@ -153,9 +277,17 @@ html, body {
 
 .inputSearch{
 	margin:1px 0 0 0;
+<<<<<<< HEAD
 }
 .inputSearch input{
 	width:318px; 
+=======
+	z-index:9999;
+	padding:0 12px;
+}
+.inputSearch input{
+	width:100%;
+>>>>>>> Week 13 Restructure + Update
 	height:27px; 
 	font-size:14px; 
 	border:1px solid #999;
@@ -186,19 +318,31 @@ html, body {
                     Current Outages
                 </h1>
             </div>
+<<<<<<< HEAD
     
+=======
+>>>>>>> Week 13 Restructure + Update
     <div class="inputSearch">
       <input type="text" placeholder=" input zipcode or city" />
     </div>
     
     <div id="map-canvas"></div>
     
+<<<<<<< HEAD
                 <div data-role="footer" data-theme="f">
                 <div id="stretch">
                 <a data-role="button" data-theme="g" data-ajax="false" data-inline="true" data-transition="flip" href="../listView/">
                     List View
                 </a>
                 <span style="font-size:12px; float:right; margin:0 15px 0 0;">Updated: April 10, 2013, 18:27</span>
+=======
+                            <div data-role="footer" data-theme="f">
+                <div id="stretch">
+                <a data-role="button" data-theme="g" data-ajax="false" data-inline="true" data-transition="flip" data-direction="reverse" href="../listView/">
+                    List View
+                </a>
+                <span style="font-size:12px; float:right;">Updated:<br />April 10, 2013, 18:27</span>
+>>>>>>> Week 13 Restructure + Update
                 </div>
     </div> 
   </body>

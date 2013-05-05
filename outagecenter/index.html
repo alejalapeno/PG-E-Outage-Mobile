@@ -24,6 +24,58 @@
         </style>
         <!-- User-generated js -->
         <script>
+<<<<<<< HEAD
+=======
+$( window ).on( "navigate", function() {
+    $("input:radio").click(function(){
+            $('.toHide').hide();
+            $("#blk-"+$(this).val()).show();
+    });
+	$(document).delegate('.ui-page', 'pagebeforeshow', function () {
+    		$("#blk-"+$('#toggle1 input[type=radio]:checked').val()).show();
+			$("#blk-"+$('#toggle2 input[type=radio]:checked').val()).show();
+	});
+	
+	var disabled = true;
+$(document).delegate('.ui-page', 'pagebeforeshow', pageCheckEnableContinue)
+$("input:radio").click(checkEnableContinue);
+$('input[type="text"],input[type="tel"],input[type="email"]').keyup(enableContinue);
+$('input[type="text"],input[type="tel"],input[type="email"]').focusout(enableContinue);
+function enableContinue() {
+	var emptyInputs = $(this).parent().parent().parent().find('input[type="text"],input[type="tel"],input[type="email"]').filter(function() { return $(this).val() == ""; });
+	if( disabled = true && emptyInputs != "" ) {
+   		$('.continueButton').removeClass('ui-disabled');
+		disabled = false;
+	}
+	if ( disabled != true && emptyInputs.val() == "" ) {
+		$('.continueButton').addClass('ui-disabled');
+		disabled = true;
+	}
+};
+function checkEnableContinue() {
+	var emptyInputs = $("#blk-"+$(this).val()).find('input[type="text"],input[type="tel"],input[type="email"]').filter(function() { return $(this).val() == ""; });
+	if( disabled = true && emptyInputs != "" ) {
+   		$('.continueButton').removeClass('ui-disabled');
+		disabled = false;
+	}
+	if ( disabled != true && emptyInputs.val() == "" ) {
+		$('.continueButton').addClass('ui-disabled');
+		disabled = true;
+	}
+};
+function pageCheckEnableContinue() {
+	var emptyInputs = $("#blk-"+$('#toggle2 input[type=radio]:checked').val()).find('input[type="text"],input[type="tel"],input[type="email"]').filter(function() { return $(this).val() == ""; });
+	if( disabled = true && emptyInputs != "" ) {
+   		$('.continueButton').removeClass('ui-disabled');
+		disabled = false;
+	}
+	if ( disabled != true && emptyInputs.val() == "" ) {
+		$('.continueButton').addClass('ui-disabled');
+		disabled = true;
+	}
+};
+ });
+>>>>>>> Week 13 Restructure + Update
         </script>
     </head>
     <body>
@@ -46,6 +98,16 @@
                 	Reporting the outage is fast and easy. Please choose one of the following:
                 </p>
                 </div>
+<<<<<<< HEAD
+=======
+            <ul data-role="listview" data-inset="true">
+            <li data-theme="c" class="menuBtn">
+                <a href="map/" data-ajax="false" data-transition="slide" class="menuLink">
+                    View Current Outages
+                </a>
+            </li>
+          	</ul>
+>>>>>>> Week 13 Restructure + Update
             <div data-role="collapsible" data-theme="c" data-iconpos="right">
                 <h3>
                 Report Power Problem
@@ -57,7 +119,11 @@
                     </a>
                 </li>
                 <li data-theme="c">
+<<<<<<< HEAD
                     <a href="report/" data-ajax="false" data-transition="slide" class="menuLink">
+=======
+                    <a href="report/" data-transition="slide" class="menuLink">
+>>>>>>> Week 13 Restructure + Update
                         Intermintent Power
                     </a>
                 </li>
@@ -65,11 +131,14 @@
             </div>
             <ul data-role="listview" data-inset="true">
             <li data-theme="c" class="menuBtn">
+<<<<<<< HEAD
                 <a href="listView/" data-ajax="false" data-transition="slide" class="menuLink">
                     View Current Outages
                 </a>
             </li>
             <li data-theme="c" class="menuBtn">
+=======
+>>>>>>> Week 13 Restructure + Update
                 <a href="#" data-transition="slide" class="menuLink">
                     Report Down Power Line
                 </a>
